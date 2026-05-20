@@ -1,0 +1,165 @@
+{
+  "version": 1,
+  "author": "Codex",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 225, "left": 390, "attrs": {} },
+    {
+      "type": "wokwi-tm1637-7segment",
+      "id": "floor_display",
+      "top": -211.24,
+      "left": -549.77,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "board-ssd1306",
+      "id": "oled",
+      "top": -195,
+      "left": -300,
+      "attrs": { "i2cAddress": "0x3c" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_ext_z",
+      "top": -30,
+      "left": -480,
+      "attrs": { "color": "green", "label": "EXT ZEMIN" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_ext_1",
+      "top": 55,
+      "left": -480,
+      "attrs": { "color": "green", "label": "EXT KAT 1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_ext_2",
+      "top": 140,
+      "left": -480,
+      "attrs": { "color": "green", "label": "EXT KAT 2" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_ext_3",
+      "top": 225,
+      "left": -480,
+      "attrs": { "color": "green", "label": "EXT KAT 3" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_in_z",
+      "top": -30,
+      "left": -255,
+      "attrs": { "color": "blue", "label": "IN ZEMIN" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_in_1",
+      "top": 55,
+      "left": -255,
+      "attrs": { "color": "blue", "label": "IN KAT 1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_in_2",
+      "top": 140,
+      "left": -255,
+      "attrs": { "color": "blue", "label": "IN KAT 2" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_in_3",
+      "top": 225,
+      "left": -255,
+      "attrs": { "color": "blue", "label": "IN KAT 3" }
+    },
+    {
+      "type": "wokwi-stepper-motor",
+      "id": "stepper",
+      "top": -111.59,
+      "left": 144.43,
+      "attrs": { "size": "17" }
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "door_servo",
+      "top": -58.6,
+      "left": 606.6,
+      "rotate": 270,
+      "attrs": { "hornColor": "black" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "label_display",
+      "top": -268.8,
+      "left": -412.8,
+      "attrs": { "text": "KAT GOSTERGESI" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "label_external",
+      "top": -76.8,
+      "left": -528,
+      "attrs": { "text": "DIS CAGRI PANELI" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "label_internal",
+      "top": -80,
+      "left": -275,
+      "attrs": { "text": "KABIN ICI PANEL" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "label_motor",
+      "top": -145,
+      "left": 390,
+      "attrs": { "text": "MOTORLAR" }
+    }
+  ],
+  "connections": [
+    [ "btn_ext_z:1.l", "uno:2", "yellow", [ "h-38.4", "v405", "h828.4", "v-167.2", "h316.5" ] ],
+    [ "btn_ext_1:1.l", "uno:3", "yellow", [ "h-38.4", "v335", "h828.4", "v-182.2", "h307" ] ],
+    [ "btn_ext_2:1.l", "uno:4", "yellow", [ "h-38.4", "v265", "h828.4", "v-197.2", "h297.5" ] ],
+    [ "btn_ext_3:1.l", "uno:5", "yellow", [ "h-38.4", "v195", "h828.4", "v-212.2", "h288" ] ],
+    [ "btn_ext_z:2.r", "uno:GND.1", "green", [ "h29", "v335", "h746", "v-106.6", "h143.5" ] ],
+    [ "btn_ext_1:2.r", "uno:GND.1", "green", [ "h29", "v260", "h746", "v-116.6", "h143.5" ] ],
+    [ "btn_ext_2:2.r", "uno:GND.1", "green", [ "h29", "v185", "h746", "v-126.6", "h143.5" ] ],
+    [ "btn_ext_3:2.r", "uno:GND.1", "green", [ "h29", "v110", "h746", "v-136.6", "h143.5" ] ],
+    [ "btn_in_z:1.l", "uno:6", "blue", [ "h-23.4", "v325", "h873.6", "v-74" ] ],
+    [ "btn_in_1:1.l", "uno:7", "blue", [ "h-23.4", "v239.2", "h864", "v-73.2" ] ],
+    [ "btn_in_2:1.l", "uno:8", "blue", [ "h-23.4", "v154.2", "h844.8", "v-73.2" ] ],
+    [ "btn_in_3:1.l", "uno:9", "blue", [ "h-23.4", "v69.2", "h835.2", "v-73.2" ] ],
+    [ "btn_in_z:2.r", "uno:GND.2", "black", [ "h15.2", "v324.4", "h643.2", "v76.8", "h89.1" ] ],
+    [ "btn_in_1:2.r", "uno:GND.2", "black", [ "h15.2", "v239.4", "h643.2", "v76.8", "h89.1" ] ],
+    [ "btn_in_2:2.r", "uno:GND.2", "black", [ "h15.2", "v154.4", "h643.2", "v76.8", "h89.1" ] ],
+    [ "btn_in_3:2.r", "uno:GND.2", "black", [ "h15.2", "v69.4", "h643.2", "v76.8", "h89.1" ] ],
+    [
+      "floor_display:CLK",
+      "uno:A2",
+      "purple",
+      [ "h19.2", "v729.6", "h969.6", "v-105.6", "h2.6" ]
+    ],
+    [
+      "floor_display:DIO",
+      "uno:A3",
+      "magenta",
+      [ "h19.2", "v729.6", "h979.2", "v-115.2", "h2.5" ]
+    ],
+    [ "floor_display:VCC", "uno:5V", "red", [ "h19.2", "v700.8", "h902.4", "v-121.1" ] ],
+    [ "floor_display:GND", "uno:GND.1", "black", [ "h19.2", "v720", "h854.4", "v-332.4" ] ],
+    [ "oled:SDA", "uno:A4", "cyan", [ "h170", "v610", "h456.7", "v20.14", "h242.4" ] ],
+    [ "oled:SCL", "uno:A5", "cyan", [ "h185", "v630", "h495", "v0.14", "h208.43" ] ],
+    [ "oled:VCC", "uno:5V", "red", [ "h200", "v650", "h599.58", "v-44.96" ] ],
+    [ "oled:GND", "uno:GND.2", "black", [ "h215", "v670", "h613.23", "v-64.96" ] ],
+    [ "stepper:A-", "uno:10", "orange", [ "v48", "h197.9" ] ],
+    [ "stepper:A+", "uno:11", "yellow", [ "v48", "h178.8" ] ],
+    [ "stepper:B+", "uno:12", "green", [ "v48", "h159.7" ] ],
+    [ "stepper:B-", "uno:13", "blue", [ "v48", "h140.59" ] ],
+    [ "door_servo:PWM", "uno:A1", "orange", [ "v336", "h-93.1" ] ],
+    [ "door_servo:V+", "uno:5V", "red", [ "v336", "h-134.3", "v-5.9" ] ],
+    [ "door_servo:GND", "uno:GND.2", "black", [ "v336", "h-124.8", "v-5.9" ] ]
+  ],
+  "dependencies": {}
+}
